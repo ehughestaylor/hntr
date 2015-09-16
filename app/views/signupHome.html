@@ -1,0 +1,53 @@
+<section id="signup-page">
+<div class="header">
+  <div class="container">
+  <ul class="sign-up-nav">
+    <li><a href="">Already a member?</a></li>
+    <li><a href="#/login">Sign In</a></li>
+  </ul>
+  </div>
+</div>
+
+<div class="jumbotron vertical-center">
+  <div class="container">
+    <img class="logo-bg" src="/images/HUNTERS.png" alt="" > 
+    <p class="left-align">by One Hunted</p> 
+    <br>
+    <p class="about-blurb">Hunters is a one of a kind shopping community for stylish men.  Sign up to experience the next level of coming out of the closet. <br><br>Pause.</p>  
+    <br>
+    <!-- Sign up form  -->
+    <form class="form-horizontal" ua-signup ng-show="!verificationEmailSent">
+    <fieldset>
+    <!-- Text input-->
+    <div class="form-group">
+      <div class="col-xs-6">
+      <input id="fullName" name="first_name" placeholder="Your name" class="form-control input-md" required="">
+        
+      </div>
+      <div class="col-xs-6">
+      <input id="emailAdd" name="login" ua-is-email placeholder="Email" class="form-control input-md" required="">
+      </div>
+      <div class="col-xs-12">
+      <input name="password" placeholder="Password" type="password" class="form-control input-md" required="">
+      </div>
+    </div>
+    <!-- Button (Double) -->
+    <div class="form-group">
+      <div class="col-md-6">
+        <button type="submit" id="signUp" name="signUp" class="btn btn-default">Sign Up or <a href="" ua-oauth-link="google">Sign up with Google</button>
+      </div>
+      <div class="col-md-6">
+        <button id="signUpFace" name="signUpFace" class="btn btn-primary">Sign Up with Facebook</button>
+      </div>
+      <p ng-show="loading"><img src="https://app.userapp.io/img/ajax-loader-transparent.gif"></p>
+      <p ng-show="error">{{ error.message }}</p>
+
+      <p ng-show="verificationEmailSent">An email has been sent to your inbox. Click on the link to verify your account.</p>
+    </div>
+    </fieldset>
+    </form>
+    <br>
+    <h2 class="signup-tagline">Men dont shop. They hunt.</h2>
+  </div>
+</div>
+</section>

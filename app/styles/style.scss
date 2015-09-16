@@ -1,0 +1,222 @@
+/////////////////////////////////
+ ///GLOBAL
+////////////////////////////////
+$black: #000;
+$grey: #F0F0F0;
+$white: #FFF;
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+    color: #FFF;
+    background-color: transparent;
+}
+.header{
+  padding-left: 0;
+  padding-right: 0;
+  margin-bottom: 0;
+}
+.left-align{
+  text-align: left;
+}
+
+/////////////////////////////////
+ ///NAVIGATION
+////////////////////////////////
+
+// COLOR AND RADIUS OF INPUT FIELD AT NAV
+.form-control, .btn{
+  border-radius:0px;
+  background-color: #5D5D5D;
+  color: white;
+  border: none;
+}
+
+// WIDTH AND BACKGROUND OF NAV
+.navbar, .navbar-default{
+  margin-bottom: 0;
+  border: none;
+  border-radius: 0;
+  background-color: $black;
+  @media (min-width: 1200px) {
+      .container{
+          max-width: 970px;
+      }
+  }
+}
+
+// LINK HOVER COLOR
+.navbar-default .navbar-nav > li:hover > a{
+  color: white;
+}
+// USER INFO AND LOG IN
+.special-img {
+    position: relative;
+    top: -5px;
+    float: left;
+    left: -5px;
+}
+
+
+/////////////////////////////////
+ ///SIGN UP PAGE
+////////////////////////////////
+.vertical-center {
+  min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+  min-height: 100vh; /* These two lines are counted as one :-)       */
+
+  display: flex;
+  align-items: center;
+}
+.jumbotron{
+  background-image: url(/images/background.jpg);
+  background-size: cover;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+#signup-page{
+  p{
+    font-family: serif;
+    font-size: 1.3em;
+  }
+  .signup-tagline{
+    text-align: center;
+  }
+  // form style
+  ::-webkit-input-placeholder {
+     color: $white;
+  }
+
+  :-moz-placeholder { /* Firefox 18- */
+     color: $white;  
+  }
+
+  ::-moz-placeholder {  /* Firefox 19+ */
+     color: $white;  
+  }
+
+  :-ms-input-placeholder {  
+     color: $white;  
+  }
+
+  .form-control{
+    background-color: rgba(0,0,0,0.6);
+    color: white;
+    border: 1px solid white;
+  }
+  // form buttons
+  #signUp{
+    border: 1px solid white;
+    background-color: rgba(0,0,0,0.6);
+    width: 100%;
+  }
+  #signUpFace{
+    background-color: #3B579E;
+    width: 100%;
+  }
+  @media (max-width: 992px){
+    #signUpFace{
+      margin-top: 1em;
+    }
+  }
+  .container {
+      min-width: 300px;
+      max-width: 670px;
+      text-align: left;
+  }
+  .logo-bg{
+    margin-bottom: 10px;
+    height: 100px;
+  }
+  @media (max-width: 500px){
+    .logo-bg{
+      height: 100%;
+      width: 100%;
+    }
+  }
+  .header{
+    width: 100%;
+    position: absolute;
+    top: 30px;
+    right: -90px;
+    background-color: transparent;
+    text-align: right;
+    .sign-up-nav{
+      float: right;
+      list-style-type: none;
+      li{
+        display: inline-block; 
+        margin: auto 1em;
+        a{
+          color: white;
+        }
+      }
+    }
+  @media (max-width: 800px){
+    .sign-up-nav{
+        float: none;
+        text-align: right;
+      }
+    }
+  }
+  @media (max-width: 800px){
+    .header{
+      position: absolute;
+      right: 10px;
+    }
+  }
+  .jumbotron{
+    text-align: center;
+    color: white;
+    .about-blurb{
+      color: white;
+      font-size: 1.1em;
+      margin:4em 0;
+    }
+  }
+}
+
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+body {
+  padding: 0;
+}
+
+
+/////////////////////////////////
+ ///LOGIN
+////////////////////////////////
+
+
+/* Custom page footer */
+.footer {
+  .nav, .navbar-nav{
+    border: none;
+    li{
+      a{
+        color: #777;
+      }
+      a:hover{
+        color: #FFF;
+        background-color: transparent;
+      }
+    }
+  }
+  background-color: $black;
+  p, a, i{
+    color: $white;
+  }
+}
+
+.container-narrow > hr {
+  margin: 30px 0;
+}
+
+
+
+
+

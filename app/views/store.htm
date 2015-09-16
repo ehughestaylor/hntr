@@ -1,0 +1,93 @@
+﻿    <div class="header">  
+      <div class="navbar navbar-default" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+            <a class="navbar-brand" href="#/"><img ng-src="images/HUNTERS.png" height="20px"></a>
+          </div>
+
+          <div class="collapse navbar-collapse" id="js-navbar-collapse">
+
+            <ul class="nav navbar-nav">
+              <li><a ng-href="#/about">Explore</a></li>
+              <li ng-show="user.authenticated" ><a ng-href="#/store">Store</a></li>
+              <li ng-show="user.authenticated"><a ng-href="#/">Sell</a></li>
+            </ul>
+            <form class="navbar-form navbar-left" role="search">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Search">
+              </div>
+            </form>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="#/signup">Sign Up</a></li>
+              <li><a href="#/login">Login</a></li>
+              <li ng-show="user.authenticated"><a href="#" ua-logout>Log Out</a></li>
+            </ul>
+
+<!--             <ul class="nav navbar-nav navbar-right">
+              <li><a href="#/"><i class="fa fa-bell"></i></a></li>
+              <li class="dropdown">
+                <a href="#/" class="dropdown-toggle profile-image" data-toggle="dropdown">
+                  <img src="http://placehold.it/30x30" class="img-circle special-img"> Test <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#"><i class="fa fa-cog"></i> Account</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#" ua-logout>Log Out</a></li>
+                </ul>
+              </li>
+            </ul> -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+<p class="text-info">
+    Welcome to the Angular Store.<br />
+    Please select the products you want and add them to your shopping cart.<br />
+    When you are done, click the shopping cart icon to review your order and check out.
+</p>
+
+<p>
+    Search: <input ng-model="search">
+</p>
+
+<table class="table table-bordered">
+    <tr class="well">
+        <td class="tdRight" colspan="4" >
+            <a href="#/cart" title="go to shopping cart" ng-disabled="cart.getTotalCount() < 1">
+                <i class="icon-shopping-cart" />
+                <b>{{cart.getTotalCount()}}</b> items, <b>{{cart.getTotalPrice() | currency}}</b>
+            </a>
+        </td>
+    </tr>
+    <tr ng-repeat="product in store.products | orderBy:'name' | filter:search" >
+        <td class="tdCenter"><img ng-src="images/products/{{product.sku}}.jpg" alt="{{product.name}}" /></td>
+        <td>
+            <a href="#/products/{{product.sku}}"><b>{{product.name}}</b></a><br />
+            {{product.description}}
+        </td>
+        <td class="tdRight">
+            {{product.price | currency}}
+        </td>
+        <td class="tdCenter">
+            <a href="" ng-click="cart.addItem(product.sku, product.name, product.price, 1)">
+                add to cart
+            </a>
+        </td>
+    </tr>
+    <tr class="well">
+        <td class="tdRight" colspan="4">
+            <a href="#/cart" title="go to shopping cart" ng-disabled="cart.getTotalCount() < 1">
+                <i class="icon-shopping-cart" />
+                <b>{{cart.getTotalCount()}}</b> items, <b>{{cart.getTotalPrice() | currency}}</b>
+            </a>
+        </td>
+    </tr>
+</table>
